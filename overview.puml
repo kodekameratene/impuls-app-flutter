@@ -1,0 +1,22 @@
+@startuml
+
+start
+repeat :App is running;
+if(location is set) then (Yes)
+    group Tab-Page
+        repeat :Tab-Page;
+        if(select News) then(Navigate to News-Page)
+            :News-View. \nShowing all push-\nmessages here.;
+        elseif (select Calendar) then(Navigate to News-Page)
+            :Calendar-View. \nShowing the \ncalendar view;
+        elseif (select Info) then(Navigate to Info-Page)
+            :Info-View. \nShowing relevant \ninformation for the festival;
+        endif
+        repeat while (Selecting another tab) is (yes)
+    endgroup
+else (No)
+    :Location-Page\n Choose the arrangement(?) you want to show;
+endif
+repeat while (closing the app) is (no)
+stop
+@enduml
