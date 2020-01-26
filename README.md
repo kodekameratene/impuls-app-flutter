@@ -6,6 +6,10 @@
 
 </div>
 
+
+[![iOS](/resources/appstore.png)]()
+[![Android](/resources/gplay.png)](https://play.google.com/store/apps/details?id=no.koka.impuls)
+
 # Impuls-App-Flutter
 
 Open-Source Festival-app written in Flutter for iOS & Android (and possibly web).
