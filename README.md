@@ -260,6 +260,33 @@ widgets
 ```
 
 
+## Contribution guide
+
+### Properly naming branches
+When creating a new feature or solving an issue.
+Create a new branch `f/<featurename>`
+We use `f/` for features `bf/` for bugfix etc...
+It doesn't matter that much as long as it makes sense.
+
+### PR
+Then create a pull request aka. PR here on GitHub and assign me ([sjoenH](https://github.com/SjoenH)) or the `utvikler`-team as a reviewer.
+Assigning the `utvikler`-team will do some load-balancing, auto assigning someone in the team.  
+
+Your branch should be merged into the `develop`-branch (not straight into master). We only have production code in master-branch.
+We may delete the feature-branch after it has been merged into develop.
+
+### Publishing a new version
+Make a PR from `develop` into `master` and tag your code.
+For example. 
+```bash 
+git tag v1.0.0
+git push origin v1.0.0
+```
+
+Tagging a release should trigger a new build on [Codemagic](https://codemagic.io/app/5e2d8c6fb9213d0d957e20f8).
+[![Codemagic build status](https://api.codemagic.io/apps/5e2d8c6fb9213d0d957e20f8/5e2d8c6fb9213d0d957e20f7/status_badge.svg)](https://codemagic.io/apps/5e2d8c6fb9213d0d957e20f8/5e2d8c6fb9213d0d957e20f7/latest_build)
+
+
 ## Other stuff to remember
 
 ### iOS screenshots to add when submitting to App Store 
