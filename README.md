@@ -6,7 +6,6 @@
 
 </div>
 
-
 [![iOS](/resources/appstore.png)]()
 [![Android](/resources/gplay.png)](https://play.google.com/store/apps/details?id=no.koka.impuls)
 
