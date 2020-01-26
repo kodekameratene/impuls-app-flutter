@@ -49,22 +49,14 @@ class NewsView extends StatelessWidget {
                         elevation: 10,
                         child: ListTile(
                           title: Text(item.title),
-//                          trailing: item.image != null
-//                              ? Image.network(item.image)
-//                              : SizedBox(),
-                          trailing: Container(
-                            decoration: BoxDecoration(
-                                borderRadius: BorderRadius.all(Radius.circular(15.0)),
-                                border: Border.all(
-                                  color: Color(0xffD50000),
-                                  width: 3,
-                                )),
-                            child: Image.network(
-                              'https://flutter-examples.com/wp-content/uploads/2019/09/sample_img.png',
-                              width: 250,
-                              fit: BoxFit.contain,
-                            ),
-                          ),
+                          trailing: item.image != null
+                              ? ClipRRect(
+                                  borderRadius: new BorderRadius.circular(8.0),
+                                  child: Image.network(
+                                    item.image,
+                                  ),
+                                )
+                              : SizedBox.shrink(),
                           subtitle: Text(
                             item.description != null ? item.description : '',
                             overflow: TextOverflow.fade,

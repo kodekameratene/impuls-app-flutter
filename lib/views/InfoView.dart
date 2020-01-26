@@ -47,7 +47,9 @@ class InfoView extends StatelessWidget {
                         child: ListTile(
                           title: Text(item.title),
                           trailing: item.image != null
-                              ? Image.network(item.image)
+                              ? ClipRRect(
+                                  borderRadius: new BorderRadius.circular(8.0),
+                                  child: Image.network(item.image))
                               : SizedBox(),
                           subtitle: Text(
                             item.description != null ? item.description : '',
