@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "381511550549",
+    "firebase_url": "https://impuls-koka.firebaseio.com",
+    "project_id": "impuls-koka",
+    "storage_bucket": "impuls-koka.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:381511550549:android:b2c7dbdb68a1db48cc36dc",
+        "android_client_info": {
+          "package_name": "no.koka.impuls"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "381511550549-ao4h9aamrd2s9iv3n3t9d14l47o099bb.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDbIbmq3Q54gNuaqQHy35j-nMlyJf7OjcM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "381511550549-ao4h9aamrd2s9iv3n3t9d14l47o099bb.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "381511550549-8648nmp60n3idt5sr8jtd4h7vsdfspds.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "no.koka.impuls"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
