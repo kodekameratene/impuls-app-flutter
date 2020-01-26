@@ -1,7 +1,7 @@
 import 'dart:convert';
 
 import 'package:flutter/cupertino.dart';
-import 'package:impuls/models/Message.dart';
+import 'package:impuls/models/NewsPost.dart';
 import 'package:impuls/requests/api.dart';
 
 class NewsProvider extends ChangeNotifier {

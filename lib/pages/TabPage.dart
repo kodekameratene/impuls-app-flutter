@@ -58,7 +58,7 @@ class _TabPageState extends State<TabPage> {
         backgroundColor: colorTheme.mainColor,
         items: <BottomNavigationBarItem>[
           BottomNavigationBarItem(
-            icon: Icon(Icons.message, color: colorTheme.textColor),
+            icon: Icon(Icons.notifications, color: colorTheme.textColor),
             title: Text(
               'Nyheter',
               style: TextStyle(color: colorTheme.textColor),
@@ -66,7 +66,7 @@ class _TabPageState extends State<TabPage> {
           ),
           BottomNavigationBarItem(
             icon: Icon(
-              Icons.notifications,
+              Icons.calendar_today,
               color: colorTheme.textColor,
             ),
             title: Text(
