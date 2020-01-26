@@ -10,8 +10,12 @@
 
 Open-Source Festival-app written in Flutter for iOS & Android (and possibly web).
 
+[![Codemagic build status](https://api.codemagic.io/apps/5e2d8c6fb9213d0d957e20f8/5e2d8c6fb9213d0d957e20f7/status_badge.svg)](https://codemagic.io/apps/5e2d8c6fb9213d0d957e20f8/5e2d8c6fb9213d0d957e20f7/latest_build)
+
 - [Impuls-App-Flutter](#impuls-app-flutter)
   - [Get in touch](#get-in-touch)
+  - [Report issues / feature requests](#report-issues--feature-requests)
+  - [ZenHub](#zenhub)
   - [Dependencies](#dependencies)
     - [Flutter](#flutter)
   - [Getting started with developing](#getting-started-with-developing)
@@ -36,6 +40,13 @@ We don't bite... And we would love to have you onboard! 😁
 
 If you want to join us in creating awesome stuff, connect with us on Discord.
 You are also welcome to just hang around. 😉
+
+## Report issues / feature requests
+
+
+## ZenHub
+
+<https://app.zenhub.com/workspaces/impuls-5e1f68bc7fc3f65df8ab07e6>
 
 ## Dependencies
 
@@ -220,7 +231,7 @@ requests
 
 ### Views
 
-This is where we add our, you gessed it, *Views*.
+This is where we add our, you guessed it, *Views*.
 A View is a combination of multiple *Widgets*.
 
 A View needs to be shown inside a Page since it lacks the scaffolding that is needed for making it a page.
@@ -247,3 +258,16 @@ widgets
 ├── increment.dart
 └── toggleTheme.dart
 ```
+
+
+## Other stuff to remember
+
+### iOS screenshots to add when submitting to App Store 
+<https://help.apple.com/app-store-connect/#/devd274dd925>
+
+Devices:
+- [x] 6.5 inch (iPhone 11 Pro Max)
+- [x] 5.5 inch (iPhone 8 Plus)
+- [x] 12.9 inch (3rd generation iPad Pro)
+- [x] 12.9 inch (2nd generation iPad Pro)
+
