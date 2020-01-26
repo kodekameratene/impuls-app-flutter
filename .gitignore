@@ -278,3 +278,7 @@ $RECYCLE.BIN/
 *.lnk
 
 # End of https://www.gitignore.io/api/code,dart,linux,macos,windows,flutter,intellij
+
+#Please keep the Signing Key secret
+/android/key.properties
+/key.jks
