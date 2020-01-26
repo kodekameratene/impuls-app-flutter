@@ -191,7 +191,7 @@ FlatButton(
 
 ### Providers
 
-This is the famous provider. Makes it easy to share state up and down the application-tree.
+This is the famous provider. Makes it easy to share state up and down the application-tree cross widgets.
 
 ```tree
 providers
