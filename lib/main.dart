@@ -10,14 +10,14 @@ import 'package:intl/date_symbol_data_local.dart';
 import 'package:provider/provider.dart';
 
 void main() {
-  final FirebaseMessaging _firebaseMessaging = FirebaseMessaging();
-  _firebaseMessaging.requestNotificationPermissions();
   initializeDateFormatting().then((_) => runApp(MyApp()));
 }
 
 class MyApp extends StatelessWidget {
+  final FirebaseMessaging _firebaseMessaging = FirebaseMessaging();
   @override
   Widget build(BuildContext context) {
+    _firebaseMessaging.requestNotificationPermissions();
     return MultiProvider(
       providers: [
         ChangeNotifierProvider<ColorProvider>.value(
