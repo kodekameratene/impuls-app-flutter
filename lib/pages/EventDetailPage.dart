@@ -6,6 +6,8 @@ import 'package:intl/intl.dart';
 import 'package:provider/provider.dart';
 import 'package:url_launcher/url_launcher.dart';
 
+import 'FullScreenImagePage.dart';
+
 class EventDetailPage extends StatelessWidget {
   final Event event;
 
@@ -15,14 +17,14 @@ class EventDetailPage extends StatelessWidget {
   Widget build(BuildContext context) {
     final ColorProvider colorTheme = Provider.of<ColorProvider>(context);
     final startTime = event.startTime != null
-        ? new DateFormat("hh:mm").format(event.startTime)
+        ? new DateFormat("HH:mm").format(event.startTime)
         : '';
     final endTime = event.endTime != null
-        ? "\n${new DateFormat("hh:mm").format(event.endTime)}"
+        ? "\n${new DateFormat("HH:mm").format(event.endTime)}"
         : '';
 
     //Location
-    final location = event.location != null ? "\n${event.location}" : '';
+    final location = event.location != null ? "\nSted: ${event.location}" : '';
 
     return Scaffold(
       appBar: AppBar(
@@ -44,13 +46,20 @@ class EventDetailPage extends StatelessWidget {
       body: SafeArea(
         child: ListView(
           children: [
-            event.image != null ? Image.network(event.image) : SizedBox(),
+            event.image != null ? GestureDetector(
+                onTap: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (_) {
+                    return FullScreenImagePage(img: event.image);
+                  }));
+                },
+                child: Image.network(event.image))
+                : SizedBox(),
             Hero(
               child: Card(
                 color: Colors.white,
                 child: ListTile(
-                  leading: Text("$startTime$location$endTime"),
-                  title: Text("${event.title ?? ''}"),
+                  leading: Text("$startTime$endTime"),
+                  title: Text("${event.title ?? ''}$location"),
                 ),
               ),
               tag: event.id,

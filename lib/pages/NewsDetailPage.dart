@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_markdown/flutter_markdown.dart';
-import 'package:impuls/models/Event.dart';
 import 'package:impuls/models/NewsPost.dart';
 import 'package:impuls/providers/AppSettings.dart';
 import 'package:provider/provider.dart';
 import 'package:url_launcher/url_launcher.dart';
+
+import 'FullScreenImagePage.dart';
 
 class NewsDetailPage extends StatelessWidget {
   final NewsPost news;
@@ -35,12 +36,19 @@ class NewsDetailPage extends StatelessWidget {
       body: SafeArea(
         child: ListView(
           children: [
-            news.image != null ? Image.network(news.image) : SizedBox(),
+            news.image != null
+                ? GestureDetector(
+                    onTap: () {
+                      Navigator.push(context, MaterialPageRoute(builder: (_) {
+                        return FullScreenImagePage(img: news.image);
+                      }));
+                    },
+                    child: Image.network(news.image))
+                : SizedBox(),
             Hero(
               child: Card(
                 color: Colors.white,
                 child: ListTile(
-//                  leading: Text("$startTime$location$endTime"),
                   title: Text("${news.title ?? ''}"),
                 ),
               ),

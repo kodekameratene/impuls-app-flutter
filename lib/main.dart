@@ -15,9 +15,14 @@ void main() {
 
 class MyApp extends StatelessWidget {
   final FirebaseMessaging _firebaseMessaging = FirebaseMessaging();
+
+  MyApp() {
+    _firebaseMessaging.requestNotificationPermissions();
+    _firebaseMessaging.getToken().then((value)=>print(value));
+  }
+
   @override
   Widget build(BuildContext context) {
-    _firebaseMessaging.requestNotificationPermissions();
     return MultiProvider(
       providers: [
         ChangeNotifierProvider<ColorProvider>.value(

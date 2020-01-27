@@ -273,12 +273,8 @@ class EventListItem extends StatelessWidget {
       child: Card(
         color: Colors.white,
         child: ListTile(
-          leading: Column(
-            children: <Widget>[Text("$startTime$endTime")],
-          ),
+          leading: Text("$startTime$endTime"),
           dense: true,
-//          trailing:
-//              event.image != null ? Image.network(event.image) : SizedBox(),
           trailing: event.description != null
               ? Icon(Icons.keyboard_arrow_right,
                   color: Colors.black38, size: 30.0)

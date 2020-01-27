@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_markdown/flutter_markdown.dart';
 import 'package:impuls/models/InfoPost.dart';
+import 'package:impuls/pages/FullScreenImagePage.dart';
 import 'package:impuls/providers/AppSettings.dart';
 import 'package:provider/provider.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -34,15 +35,23 @@ class InfoDetailPage extends StatelessWidget {
       body: SafeArea(
         child: ListView(
           children: [
-            info.image != null ? Image.network(info.image) : SizedBox(),
+            info.image != null
+                ? GestureDetector(
+                    onTap: () {
+                      Navigator.push(context, MaterialPageRoute(builder: (_) {
+                        return FullScreenImagePage(img: info.image);
+                      }));
+                    },
+                    child: Image.network(info.image))
+                : SizedBox(),
             Hero(
               child: Card(
                 color: Colors.white,
                 child: ListTile(
-//                  leading: Text("$startTime$location$endTime"),
                   title: Text("${info.title ?? ''}"),
                 ),
-              ), tag: info.id,
+              ),
+              tag: info.id,
             ),
             info.description != null
                 ? Card(
