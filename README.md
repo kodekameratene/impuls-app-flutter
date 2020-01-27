@@ -4,7 +4,7 @@
 
 ### Made by [KoKa](https://koka.no)
 
-[![iOS](/resources/appstore.png)]()
+[![iOS](/resources/appstore.png)](https://apps.apple.com/no/app/impuls-trh/id1496543581)
 [![Android](/resources/gplay.png)](https://play.google.com/store/apps/details?id=no.koka.impuls)
 
 </div>
