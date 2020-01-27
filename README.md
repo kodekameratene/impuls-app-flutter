@@ -279,6 +279,10 @@ Your branch should be merged into the `develop`-branch (not straight into master
 We may delete the feature-branch after it has been merged into develop.
 
 ### Publishing a new version
+
+Bump the version in `pubspec.yaml`. 
+NB: **Remember to update both the version number as well as the build number.**
+
 Make a PR from `develop` into `master` and tag your code.
 For example. 
 ```bash 
