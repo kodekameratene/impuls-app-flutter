@@ -1,69 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
     <title>Impuls App Download</title>
-  </head>
-  <script>
+</head>
+<script>
     var isMobile = {
-      Android: function() {
-        return navigator.userAgent.match(/Android/i);
-      },
-      BlackBerry: function() {
-        return navigator.userAgent.match(/BlackBerry/i);
-      },
-      iOS: function() {
-        return navigator.userAgent.match(/iPhone|iPad|iPod/i);
-      },
-      Opera: function() {
-        return navigator.userAgent.match(/Opera Mini/i);
-      },
-      Windows: function() {
-        return navigator.userAgent.match(/IEMobile/i);
-      },
-      any: function() {
-        return (
-          isMobile.Android() ||
-          isMobile.BlackBerry() ||
-          isMobile.iOS() ||
-          isMobile.Opera() ||
-          isMobile.Windows()
-        );
-      }
+        Android: function () {
+            return navigator.userAgent.match(/Android/i);
+        },
+        BlackBerry: function () {
+            return navigator.userAgent.match(/BlackBerry/i);
+        },
+        iOS: function () {
+            return navigator.userAgent.match(/iPhone|iPad|iPod/i);
+        },
+        Opera: function () {
+            return navigator.userAgent.match(/Opera Mini/i);
+        },
+        Windows: function () {
+            return navigator.userAgent.match(/IEMobile/i);
+        },
+        any: function () {
+            return (
+                isMobile.Android() ||
+                isMobile.BlackBerry() ||
+                isMobile.iOS() ||
+                isMobile.Opera() ||
+                isMobile.Windows()
+            );
+        }
     };
 
     if (isMobile.Android()) {
-      document.location.href =
-        "https://play.google.com/store/apps/details?id=no.koka.impuls";
+        document.location.href =
+            "https://play.google.com/store/apps/details?id=no.koka.impuls";
     } else if (isMobile.iOS()) {
-      document.location.href =
-        "https://apps.apple.com/no/app/impuls-trh/id1496543581";
+        document.location.href =
+            "https://apps.apple.com/no/app/impuls-trh/id1496543581";
     }
-  </script>
-  <body>
-    <div align="center">
-      <img
-        src="../assets/images/icon.png"
-        width="200px"
-        style="border-radius: 20px; margin:50px;"
-        alt=""
-      />
-    </div>
-    <div align="center" style="margin-bottom: 50px;">
-      <a href="https://apps.apple.com/no/app/impuls-trh/id1496543581">
-        <img src="../resources/appstore.png" alt="" />
-      </a>
-      <a href="https://play.google.com/store/apps/details?id=no.koka.impuls">
-        <img src="../resources/gplay.png" alt="" />
-      </a>
-    </div>
-    <div align="center">
-      Made by
-      <a href="https://koka.no">
+</script>
+<body>
+<div align="center">
+    <img
+            src="https://raw.githubusercontent.com/kodekameratene/impuls-app-flutter/master/assets/images/icon.png"
+            width="200px"
+            style="border-radius: 20px; margin:50px;"
+            alt=""
+    />
+</div>
+<div align="center" style="margin-bottom: 50px;">
+    <a href="https://apps.apple.com/no/app/impuls-trh/id1496543581">
+        <img src="https://raw.githubusercontent.com/kodekameratene/impuls-app-flutter/master/resources/appstore.png" alt=""/>
+    </a>
+    <a href="https://play.google.com/store/apps/details?id=no.koka.impuls">
+        <img src="https://raw.githubusercontent.com/kodekameratene/impuls-app-flutter/master/resources/gplay.png" alt=""/>
+    </a>
+</div>
+<div align="center">
+    Made by
+    <a href="https://koka.no">
         KoKa
-      </a>
-    </div>
-  </body>
+    </a>
+</div>
+</body>
 </html>
