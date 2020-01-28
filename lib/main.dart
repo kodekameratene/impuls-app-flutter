@@ -1,4 +1,3 @@
-import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
 import 'package:impuls/pages/TabPage.dart';
 import 'package:impuls/providers/AppSettings.dart';
@@ -13,14 +12,12 @@ void main() {
   initializeDateFormatting().then((_) => runApp(MyApp()));
 }
 
-class MyApp extends StatelessWidget {
-  final FirebaseMessaging _firebaseMessaging = FirebaseMessaging();
+class MyApp extends StatefulWidget {
+  @override
+  _MyAppState createState() => _MyAppState();
+}
 
-  MyApp() {
-    _firebaseMessaging.requestNotificationPermissions();
-    _firebaseMessaging.getToken().then((value)=>print(value));
-  }
-
+class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return MultiProvider(

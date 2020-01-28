@@ -1,3 +1,4 @@
+import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
 import 'package:impuls/providers/AppSettings.dart';
 import 'package:impuls/providers/EventsProvider.dart';
@@ -20,6 +21,59 @@ class TabPage extends StatefulWidget {
 }
 
 class _TabPageState extends State<TabPage> {
+  final FirebaseMessaging _firebaseMessaging = FirebaseMessaging();
+
+  @override
+  void initState() {
+    super.initState();
+
+    //Todo: Move this logic to a more fitting place.
+    //It got nothing to do with the tab-page, but
+    // I needed it mounted somewhere in the context tree...
+    _firebaseMessaging.configure(
+      onMessage: (Map<String, dynamic> message) async {
+        print("onMessage: $message");
+        showDialog<bool>(
+          context: context,
+          builder: (_) => AlertDialog(
+            content: Text(
+                'Ny Push-notifikasjon!\nDu finner den på "Nyheter"-siden.'),
+            actions: <Widget>[
+              FlatButton(
+                child: const Text('OK'),
+                onPressed: () {
+                  Navigator.pop(context, false);
+                },
+              ),
+            ],
+          ),
+        );
+      },
+      onLaunch: (Map<String, dynamic> message) async {
+        print("onLaunch: $message");
+        setState(() {
+          _selectedIndex = 0;
+        });
+      },
+      onResume: (Map<String, dynamic> message) async {
+        print("onResume: $message");
+        setState(() {
+          _selectedIndex = 0;
+        });
+      },
+    );
+    _firebaseMessaging.requestNotificationPermissions(
+        const IosNotificationSettings(
+            sound: true, badge: true, alert: true, provisional: false));
+    _firebaseMessaging.onIosSettingsRegistered
+        .listen((IosNotificationSettings settings) {
+      print("Settings registered: $settings");
+    });
+    _firebaseMessaging.getToken().then((String token) {
+      assert(token != null);
+    });
+  }
+
   int _selectedIndex = 0;
 
   void _onItemTapped(int index, newsProvider, eventsProvider, infoProvider) {
