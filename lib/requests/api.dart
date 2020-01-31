@@ -2,7 +2,7 @@ import 'package:http/http.dart' as http;
 import 'package:shared_preferences/shared_preferences.dart';
 
 class API {
-  static bool production = false;
+  static bool production = true;
   final String url =
       production ? 'https://impuls-api.herokuapp.com' : 'http://localhost:3001';
   final String selectedArrangement = '5e19cdd924cfa04fc3de1d3a';
