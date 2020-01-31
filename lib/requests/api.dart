@@ -1,31 +1,53 @@
 import 'package:http/http.dart' as http;
+import 'package:shared_preferences/shared_preferences.dart';
 
 class API {
-  final String url = 'https://impuls-api.herokuapp.com';
+  static bool production = false;
+  final String url =
+      production ? 'https://impuls-api.herokuapp.com' : 'http://localhost:3001';
   final String selectedArrangement = '5e19cdd924cfa04fc3de1d3a';
 
-  Future<http.Response> fetchArrangements() {
-    var result = http.get(url + '/arrangements');
-    return result;
+  //Helper methods
+  Future<bool> shouldAskForSecrets() async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    var secretsValue = prefs.getBool('show_secrets');
+    return secretsValue != null && secretsValue;
   }
 
-  Future<http.Response> fetchNews() {
-    var result = http.get(url + '/news');
-    return result;
+  //Requests
+  Future<http.Response> fetchArrangements() async {
+    bool showSecrets = await shouldAskForSecrets();
+    return showSecrets
+        ? http.get(url + '/arrangements?secrets=true')
+        : http.get(url + '/arrangements');
   }
 
-  Future<http.Response> fetchEventsForArrangement(arrangement) {
-    var result = http.get(url + '/events?arrangement=$selectedArrangement');
-    return result;
+  Future<http.Response> fetchNews() async {
+    bool showSecrets = await shouldAskForSecrets();
+    return showSecrets
+        ? http.get(url + '/news?secrets=true')
+        : http.get(url + '/news');
   }
 
-  Future<http.Response> fetchAllEvents() {
-    var result = http.get(url + '/events');
-    return result;
+  Future<http.Response> fetchEventsForArrangement(arrangement) async {
+    bool showSecrets = await shouldAskForSecrets();
+    return showSecrets
+        ? http
+            .get(url + '/events?secrets=true?arrangement=$selectedArrangement')
+        : http.get(url + '/events?arrangement=$selectedArrangement');
   }
 
-  Future<http.Response> fetchInfo() {
-    var result = http.get(url + '/info');
-    return result;
+  Future<http.Response> fetchAllEvents() async {
+    bool showSecrets = await shouldAskForSecrets();
+    return showSecrets
+        ? http.get(url + '/events?secrets=true')
+        : http.get(url + '/events');
+  }
+
+  Future<http.Response> fetchInfo() async {
+    bool showSecrets = await shouldAskForSecrets();
+    return showSecrets
+        ? http.get(url + '/info?secrets=true')
+        : http.get(url + '/info');
   }
 }

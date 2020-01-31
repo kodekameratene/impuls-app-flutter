@@ -37,6 +37,9 @@ class _MyAppState extends State<MyApp> {
         ChangeNotifierProvider<ArrangementProvider>.value(
           value: ArrangementProvider(),
         ),
+        ChangeNotifierProvider<AppSettings>.value(
+          value: AppSettings(),
+        )
       ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,

@@ -1,5 +1,6 @@
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
+import 'package:impuls/pages/SettingsPage.dart';
 import 'package:impuls/providers/AppSettings.dart';
 import 'package:impuls/providers/EventsProvider.dart';
 import 'package:impuls/providers/InfoProvider.dart';
@@ -98,6 +99,18 @@ class _TabPageState extends State<TabPage> {
     final ColorProvider colorTheme = Provider.of<ColorProvider>(context);
     return Scaffold(
       appBar: AppBar(
+        leading: IconButton(
+          icon: Icon(
+            Icons.settings,
+            color: colorTheme.secondaryColor,
+          ),
+          onPressed: () => Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => SettingsPage(),
+            ),
+          ),
+        ),
         title: Text(
           "NATURLIG OVERNATURLIG",
           style: TextStyle(color: colorTheme.textColor),

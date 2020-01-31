@@ -2,8 +2,9 @@ import 'package:flutter/material.dart';
 
 class FrostedButton extends StatelessWidget {
   final Function onTap;
+  final String text;
 
-  FrostedButton({@required this.onTap});
+  FrostedButton({@required this.onTap, @required this.text});
 
   @override
   Widget build(BuildContext context) {
@@ -12,8 +13,7 @@ class FrostedButton extends StatelessWidget {
       decoration: BoxDecoration(color: Colors.white30),
       child: InkWell(
         onTap: this.onTap,
-        child: Container(
-            padding: EdgeInsets.all(10), child: Text('Fetch Arrangements')),
+        child: Container(padding: EdgeInsets.all(10), child: Text('$text')),
       ),
     );
   }

@@ -3,6 +3,7 @@ import 'dart:convert';
 import 'package:flutter/cupertino.dart';
 import 'package:impuls/models/InfoPost.dart';
 import 'package:impuls/requests/api.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class InfoProvider extends ChangeNotifier {
   List<InfoPost> _info = [];
