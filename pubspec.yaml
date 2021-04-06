@@ -25,7 +25,7 @@ dependencies:
   flutter:
     sdk: flutter
   provider: ^5.0.0
-  table_calendar: ^2.2.2
+  table_calendar: ^3.0.0
   shared_preferences: ^2.0.0
   http: ^0.13.0
   flutter_markdown: ^0.6.0
