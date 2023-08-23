@@ -19,7 +19,7 @@ repository: https://github.com/kodekameratene/impuls-app-flutter
 issue_tracker: https://github.com/kodekameratene/impuls-app-flutter/issues
 
 environment:
-  sdk: ">=2.2.0 <3.0.0"
+  sdk: "<4.0.0"
 
 dependencies:
   flutter:
